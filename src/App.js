@@ -17,14 +17,12 @@ class App extends React.Component {
   }
 
   async handleSubmit(event) {
-    // do some stuff with backend
-    console.log("A");
-    console.log(this.state.url);
     const url = "https://www.benkim.dev";
     const payload = {"url": url};
     await axios.post("https://www.briefs.link", payload)
-      .then(response => this.setState({submitted: true, stub: response, url: url}));
-    console.log("A");
+      .then(response => {
+        this.setState({submitted: true, url: url, stub: response.data.stub});
+    });
   }
 
   handleChange(event) {
@@ -32,32 +30,42 @@ class App extends React.Component {
   }
 
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <h1>make a brief link</h1>
-          <br/>
-          <div className="input">
-            <InputGroup>
-              <FormControl
-                placeholder="url"
-                aria-label="url"
-                aria-describedby="basic-addon2"
-                onChange={this.handleChange}
-              />
-              <InputGroup.Append>
-                <Button
-                  variant="outline-secondary"
-                  onClick={this.handleSubmit}
-                >
-                  Submit
-                </Button>
-              </InputGroup.Append>
-            </InputGroup>
-          </div>
-        </header>
-      </div>
-    );
+    if (this.state.submitted === true) {
+      return (
+        <div className="App">
+          <header className="App-header">
+            <h1>find your url at: briefs.link/{this.state.stub}</h1>
+          </header>
+        </div>
+      );
+    } else {
+      return (
+        <div className="App">
+          <header className="App-header">
+            <h1>make a brief link</h1>
+            <br/>
+            <div className="input">
+              <InputGroup>
+                <FormControl
+                  placeholder="url"
+                  aria-label="url"
+                  aria-describedby="basic-addon2"
+                  onChange={this.handleChange}
+                />
+                <InputGroup.Append>
+                  <Button
+                    variant="outline-secondary"
+                    onClick={this.handleSubmit}
+                  >
+                    Submit
+                  </Button>
+                </InputGroup.Append>
+              </InputGroup>
+            </div>
+          </header>
+        </div>
+      );
+    }
   }
 }
 
