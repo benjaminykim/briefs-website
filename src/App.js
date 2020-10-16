@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Form, Button, InputGroup, FormControl } from 'react-bootstrap';
+import { Button, InputGroup, FormControl } from 'react-bootstrap';
+import axios from 'axios';
 
 class App extends React.Component {
   constructor(props) {
@@ -9,11 +10,25 @@ class App extends React.Component {
     this.state = {
       submitted: false,
       url: '',
+      stub: '',
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleSubmit(url) {
+  async handleSubmit(event) {
     // do some stuff with backend
+    console.log("A");
+    console.log(this.state.url);
+    const url = "https://www.benkim.dev";
+    const payload = {"url": url};
+    await axios.post("https://www.briefs.link", payload)
+      .then(response => this.setState({submitted: true, stub: response, url: url}));
+    console.log("A");
+  }
+
+  handleChange(event) {
+    this.setState({url: event.target.value});
   }
 
   render() {
@@ -28,9 +43,15 @@ class App extends React.Component {
                 placeholder="url"
                 aria-label="url"
                 aria-describedby="basic-addon2"
+                onChange={this.handleChange}
               />
               <InputGroup.Append>
-                <Button variant="outline-secondary">Submit</Button>
+                <Button
+                  variant="outline-secondary"
+                  onClick={this.handleSubmit}
+                >
+                  Submit
+                </Button>
               </InputGroup.Append>
             </InputGroup>
           </div>
