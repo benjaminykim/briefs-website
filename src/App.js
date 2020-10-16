@@ -17,11 +17,10 @@ class App extends React.Component {
   }
 
   async handleSubmit(event) {
-    const url = "https://www.benkim.dev";
-    const payload = {"url": url};
+    const payload = {"url": "https://" + this.state.url};
     await axios.post("https://www.briefs.link", payload)
       .then(response => {
-        this.setState({submitted: true, url: url, stub: response.data.stub});
+        this.setState({submitted: true, url: "https://" + this.state.url, stub: response.data.stub});
     });
   }
 
@@ -46,8 +45,12 @@ class App extends React.Component {
             <br/>
             <div className="input">
               <InputGroup>
+                <InputGroup.Prepend>
+                  <InputGroup.Text id="basic-addon3">
+                    https://
+                  </InputGroup.Text>
+                </InputGroup.Prepend>
                 <FormControl
-                  placeholder="url"
                   aria-label="url"
                   aria-describedby="basic-addon2"
                   onChange={this.handleChange}
