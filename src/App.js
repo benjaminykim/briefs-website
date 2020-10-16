@@ -3,6 +3,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, InputGroup, FormControl } from 'react-bootstrap';
 import axios from 'axios';
+import logo from './logo.png';
 
 class App extends React.Component {
   constructor(props) {
@@ -33,6 +34,7 @@ class App extends React.Component {
       return (
         <div className="App">
           <header className="App-header">
+            <img src={logo} alt="Logo" />
             <h1>find your url at: briefs.link/{this.state.stub}</h1>
           </header>
         </div>
@@ -41,6 +43,7 @@ class App extends React.Component {
       return (
         <div className="App">
           <header className="App-header">
+              <img src={logo} alt="Logo" />
             <h1>make a brief link</h1>
             <br/>
             <div className="input">
