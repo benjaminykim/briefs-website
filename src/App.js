@@ -1,26 +1,43 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Form, Button, InputGroup, FormControl } from 'react-bootstrap';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      submitted: false,
+      url: '',
+    };
+  }
+
+  handleSubmit(url) {
+    // do some stuff with backend
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <h1>make a brief link</h1>
+          <br/>
+          <div className="input">
+            <InputGroup>
+              <FormControl
+                placeholder="url"
+                aria-label="url"
+                aria-describedby="basic-addon2"
+              />
+              <InputGroup.Append>
+                <Button variant="outline-secondary">Submit</Button>
+              </InputGroup.Append>
+            </InputGroup>
+          </div>
+        </header>
+      </div>
+    );
+  }
 }
 
 export default App;
