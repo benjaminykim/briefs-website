@@ -15,6 +15,8 @@ class App extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
+    this.copyToClipboard = this.copyToClipboard.bind(this);
   }
 
   async handleSubmit(event) {
@@ -29,13 +31,29 @@ class App extends React.Component {
     this.setState({url: event.target.value});
   }
 
+  handleKeyPress(event) {
+    if (event.charCode===13) {
+      this.handleSubmit(event);
+    }
+  }
+
+  copyToClipboard(event) {
+    navigator.clipboard.writeText("https://briefs.link/" + this.state.stub);
+  }
+
   render() {
     if (this.state.submitted === true) {
       return (
         <div className="App">
           <header className="App-header">
             <img className="logo" src={logo} alt="Logo" />
-            <h1 className="title">find your url at: briefs.link/{this.state.stub}</h1>
+            <h1 className="title">your brief link:</h1>
+            <div className="urlDisplay">
+              <p>briefs.link/{this.state.stub}</p>
+              <Button onClick={this.copyToClipboard}>
+                <img className="copyImage" alt="copy url icon" src="https://img.icons8.com/fluent/96/000000/clipboard.png"/>
+              </Button>
+            </div>
           </header>
         </div>
       );
@@ -57,6 +75,7 @@ class App extends React.Component {
                   aria-label="url"
                   aria-describedby="basic-addon2"
                   onChange={this.handleChange}
+                  onKeyPress={this.handleKeyPress}
                 />
                 <InputGroup.Append>
                   <Button

@@ -23,7 +23,29 @@
   margin-bottom: 20px;
 }
 
+.copyImage {
+  width: 50px;
+}
+
+.urlDisplay{
+  display: inline;
+  font-size: calc(10px + 1.8vmin);
+}
+
 @media only screen and (min-width: 800px) {
+  .copyImage {
+    width:50px;
+  }
+
+  .urlDisplay {
+    display: inline;
+    font-size: calc(10px + 1.8vmin);
+  }
+
+  .copyImage:hover {
+    opacity: 50%;
+  }
+
   .App-header {
     background-color: #282c34;
     min-height: 100vh;
