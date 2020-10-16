@@ -34,8 +34,8 @@ class App extends React.Component {
       return (
         <div className="App">
           <header className="App-header">
-            <img src={logo} alt="Logo" />
-            <h1>find your url at: briefs.link/{this.state.stub}</h1>
+            <img className="logo" src={logo} alt="Logo" />
+            <h1 className="title">find your url at: briefs.link/{this.state.stub}</h1>
           </header>
         </div>
       );
@@ -43,8 +43,8 @@ class App extends React.Component {
       return (
         <div className="App">
           <header className="App-header">
-              <img src={logo} alt="Logo" />
-            <h1>make a brief link</h1>
+            <img className="logo" src={logo} alt="Logo" />
+            <h1 className="title">make a brief link</h1>
             <br/>
             <div className="input">
               <InputGroup>
