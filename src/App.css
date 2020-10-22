@@ -1,6 +1,22 @@
+:root {
+  --font-family: Menlo, 'Roboto Mono', Courier New, monospace;
+  --background: #282c34;
+  --console-background: #535264;
+}
+
+html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Roboto',
+    Roboto, Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+h1 {
+  font-weight: 200;
+}
+
 .container {
-  background-color: #282c34;
-  min-height: 90vh;
+  background-color: var(--background);
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,18 +27,49 @@
 }
 
 .console {
-  background-color: #282c34;
-  min-height: 90vh;
+  background-color: var(--console-background);
+  border: 3px solid #545855;
+  border-radius: 25px;
+  display: flex;
+  align-items: flex-start;
+  justify-items: flex-start;
+  justify-content: flex-start;
+  padding: 30px 30px 30px 30px;
+}
+
+.holder {
+  margin: 30px 30px 30px 30px;
+}
+
+.console-meta {
+  background-color: var(--background);
   display: flex;
   flex-direction: column;
   font-size: calc(10px + 2vmin);
   color: white;
-  padding: 3rem 5rem;
+  border: 3px solid #545855;
+  border-radius: 25px;
+  text-align: start;
+  padding-top: 30px;
+}
+
+td {
+  font-size: calc(10px + 2vmin);
+}
+.console-title {
+  border-bottom: 3px solid #4c4c4c;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
 }
 
 .scaffold {
-  background-color: #282c34;
+  background-color: var(--background);
   min-height: 100vh;
+}
+
+.footer {
+  min-height:50px;
 }
 
 .input {
