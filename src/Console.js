@@ -23,12 +23,16 @@ function Console(props) {
     total_read: 0,
     total_storage: 0,
   });
+  const [cpu, setCpu] = useState({});
+  const [mem, setMem] = useState({});
 
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios('https://briefs.link/console');
       setPop(result.data.top.slice(0, 3));
       setServer(result.data.server);
+      setCpu(result.data.cpu);
+      setMem(result.data.cpuMem);
     };
     fetchData();
   }, []);
@@ -54,7 +58,7 @@ function Console(props) {
     } else if (pageIndex === 2) {
       return (<LinkAnalytics />);
     } else if (pageIndex === 3) {
-      return (<ServerAnalytics server={server} />);
+      return (<ServerAnalytics server={server} cpu={cpu} mem={mem} />);
     }
   }
 
