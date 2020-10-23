@@ -1,11 +1,17 @@
 import React from 'react';
 import '../../App.css';
-import { processNumber } from '../../Helper';
+import { processNumber, parsePercentage, formatData } from '../../Helper.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Table } from 'react-bootstrap';
+import { Table, Row, Col } from 'react-bootstrap';
+import CircleGraphCard from './components/CircleGraphCard.js';
 
 function ServerAnalytics(props) {
-  let server = props.server;
+  const server = props.server;
+  const cpu = props.cpu;
+  const mem = props.mem;
+
+  const  memPercent = parsePercentage(mem.used/mem.total);
+  const cpuPercent = parsePercentage(parseInt(cpu.speed) / 5);
   const ts = {
     fontSize: '1.2rem',
     color: 'white',
@@ -14,6 +20,20 @@ function ServerAnalytics(props) {
   return(
     <div>
       <h1 className="console-title">Server Analytics</h1>
+      <Row>
+	<Col xl={3}>
+	  <CircleGraphCard name="Memory" value={memPercent} unit={"%"} text={`${formatData(mem.used)} of ${formatData(mem.total)} used` } />
+	</Col>
+	<Col xl={3}>
+	  <CircleGraphCard name="CPU Usage" value={cpuPercent} unit={"GHz"} text={`${cpu.speed} GHz`}/>
+	</Col>
+	<Col xl={3}>
+	  <CircleGraphCard name="Memory" value="50" />
+	</Col>
+      </Row>
+      <br/>
+      <br/>
+      <br/>
 	<Table  bordered hover variant="dark">
 	  <tbody>
 	    <tr>

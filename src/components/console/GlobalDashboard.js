@@ -2,9 +2,8 @@ import React from 'react';
 import '../../App.css';
 import { processNumber } from '../../Helper';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Table, Row, Col, Card } from 'react-bootstrap';
-import { CircularProgressbar } from 'react-circular-progressbar';
-import 'react-circular-progressbar/dist/styles.css';
+import { Table, Row, Col } from 'react-bootstrap';
+import CircleGraphCard from './components/CircleGraphCard.js';
 
 function GlobalDash(props) {
   return(
@@ -12,7 +11,7 @@ function GlobalDash(props) {
       <h1 className="console-title">Global Dashboard</h1>
       <Row>
 	<Col xl={3}>
-	  <CircularGraph name="Data" value="50"/>
+	  <CircleGraphCard name="Data" value="50"/>
 	</Col>
 	<Col>
 	</Col>
@@ -23,20 +22,6 @@ function GlobalDash(props) {
       <h2>High Traffic Links</h2>
       <LinkTable popular={props.popular} />
     </div>
-  );
-}
-
-function CircularGraph(props) {
-  return (
-    <Card bg="dark">
-      <Card.Header style={{color: 'white', fontSize: '1.4rem'}}>{props.name}</Card.Header>
-      <Card.Body>
-	<div className="circleGraph">
-	  <CircularProgressbar value={props.value} text={`${props.value}%`} />
-	</div>
-	<p>Text Data Stuff Here</p>
-      </Card.Body>
-    </Card>
   );
 }
 

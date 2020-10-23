@@ -1,6 +1,5 @@
 import React from 'react';
 import '../../App.css';
-import { processNumber } from '../../Helper';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function LinkAnalytics(props) {
