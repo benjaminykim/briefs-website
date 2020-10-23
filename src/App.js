@@ -4,8 +4,8 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import Home from './Home';
-import Console from './Console';
+import Home from './components/Home';
+import Console from './components/Console';
 import { Navbar, Nav } from 'react-bootstrap';
 
 export default function App() {

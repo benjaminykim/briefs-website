@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import './App.css';
+import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, InputGroup, FormControl } from 'react-bootstrap';
 import axios from 'axios';
-import logo from './logo.png';
+import logo from '../logo.png';
 
 function Home(props) {
     const [url, setUrl] = useState('');

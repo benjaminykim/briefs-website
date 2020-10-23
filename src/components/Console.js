@@ -1,13 +1,13 @@
 import React from 'react';
-import './App.css';
+import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Container, Col, Row } from 'react-bootstrap';
-import GlobalDash from './components/console/GlobalDashboard';
-import UserDash from './components/console/UserDashboard';
-import ServerAnalytics from './components/console/ServerAnalytics';
-import LinkAnalytics from './components/console/LinkAnalytics';
+import GlobalDash from './console/GlobalDashboard';
+import UserDash from './console/UserDashboard';
+import ServerAnalytics from './console/ServerAnalytics';
+import LinkAnalytics from './console/LinkAnalytics';
 
 function Console(props) {
   const [page, setPage] = useState(0);
