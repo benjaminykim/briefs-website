@@ -12,7 +12,7 @@ export default function App() {
   return (
     <Router>
       <div className="scaffold">
-        <Navbar expand="lg" bg="dark" variant="dark" className="navbar">
+        <Navbar expand="lg" bg="dark" variant="dark" className="navbar" style={{height:'7vh'}}>
           <Navbar.Brand href="/">Briefs.Link</Navbar.Brand>
           <Nav className="mr-auto">
             <Nav.Link href="/">Home</Nav.Link>
