@@ -9,16 +9,6 @@ function GlobalDash(props) {
   return(
     <div>
       <h1 className="console-title">Global Dashboard</h1>
-      <Row>
-	<Col xl={3}>
-	  <CircleGraphCard name="Data" value="50"/>
-	</Col>
-	<Col>
-	</Col>
-      </Row>
-      <br/>
-      <br/>
-      <br/>
       <h2>High Traffic Links</h2>
       <LinkTable popular={props.popular} />
     </div>

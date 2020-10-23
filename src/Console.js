@@ -33,6 +33,7 @@ function Console(props) {
       setServer(result.data.server);
       setCpu(result.data.cpu);
       setMem(result.data.cpuMem);
+      console.log(result.data);
     };
     fetchData();
   }, []);
@@ -54,11 +55,11 @@ function Console(props) {
     if (pageIndex === 0) {
       return (<GlobalDash popular={popular} />);
     } else if (pageIndex === 1) {
-      return (<UserDash />);
-    } else if (pageIndex === 2) {
-      return (<LinkAnalytics />);
-    } else if (pageIndex === 3) {
       return (<ServerAnalytics server={server} cpu={cpu} mem={mem} />);
+    } else if (pageIndex === 2) {
+      return (<UserDash />);
+    } else if (pageIndex === 3) {
+      return (<LinkAnalytics />);
     }
   }
 
@@ -67,9 +68,9 @@ function Console(props) {
       <Row>
 	<Col xl={3} className="console-panel console-sidebar">
 	  <div className="sidebar-item" style={getOpacity(0)} onClick={onPageClick(0)}>Global Dashboard</div>
-	  <div className="sidebar-item" style={getOpacity(1)} onClick={onPageClick(1)}>User Dashboard</div>
-	  <div className="sidebar-item" style={getOpacity(2)} onClick={onPageClick(2)}>Link Analytics</div>
-	  <div className="sidebar-item" style={getOpacity(3)} onClick={onPageClick(3)}>Server Analytics</div>
+	  <div className="sidebar-item" style={getOpacity(1)} onClick={onPageClick(1)}>Server Analytics</div>
+	  <div className="sidebar-item" style={getOpacity(2)} onClick={onPageClick(2)}>User Dashboard</div>
+	  <div className="sidebar-item" style={getOpacity(3)} onClick={onPageClick(3)}>Link Analytics</div>
 	</Col>
 	<Col xl={9} className="console-panel console-main">
 	  {getPage(page)}
