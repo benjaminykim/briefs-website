@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import Home from './Home';
 import Console from './Console';
-import { Container, Navbar, Nav } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
 
 export default function App() {
   return (

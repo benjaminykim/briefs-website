@@ -21,9 +21,9 @@ function ServerAnalytics(props) {
     };
 
     return(
-      <div>
-      <h2>Server Data</h2>
-      <Table  bordered hover variant="dark">
+      <div className="dataTable">
+      <h2 className="console-subtitle">Server Data</h2>
+      <Table responsive bordered hover variant="dark">
 	<tbody>
 	  <tr>
 	    <td style={ts}>Total Links Created</td>
@@ -67,9 +67,9 @@ function ServerAnalytics(props) {
     };
 
     return(
-      <div>
-      <h2>CPU  Data</h2>
-      <Table  bordered hover variant="dark">
+      <div className="dataTable">
+      <h2 className="console-subtitle">CPU  Data</h2>
+      <Table responsive bordered hover variant="dark">
 	<tbody>
 	  <tr>
 	    <td style={ts}>CPU Model</td>
@@ -97,9 +97,9 @@ function ServerAnalytics(props) {
     };
 
     return(
-      <div>
-      <h2>Memory</h2>
-      <Table  bordered hover variant="dark">
+      <div className="dataTable">
+      <h2 className="console-subtitle">Memory</h2>
+      <Table responsive bordered hover variant="dark">
 	<tbody>
 	  {Object.keys(mem).map((key, index) => {
 	    return(

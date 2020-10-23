@@ -8,7 +8,7 @@ function GlobalDash(props) {
   return(
     <div>
       <h1 className="console-title">Global Dashboard</h1>
-      <h2>High Traffic Links</h2>
+      <h2 className="console-subtitle">High Traffic Links</h2>
       <LinkTable popular={props.popular} />
     </div>
   );
@@ -21,7 +21,7 @@ function LinkTable(props) {
   };
 
   return (
-    <Table  bordered hover variant="dark">
+    <Table responsive bordered hover variant="dark">
       <thead>
 	<tr>
 	  <td style={ts}>URL</td>

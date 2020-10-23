@@ -6,7 +6,7 @@ import 'react-circular-progressbar/dist/styles.css';
 
 function CircleGraphCard(props) {
   return (
-    <Card bg="dark">
+    <Card bg="dark" className="graphCard">
       <Card.Header style={{color: 'white', fontSize: '1.4rem'}}>{props.name}</Card.Header>
       <Card.Body>
 	<div className="circleGraph">
