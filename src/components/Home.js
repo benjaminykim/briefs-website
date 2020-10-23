@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, InputGroup, FormControl } from 'react-bootstrap';
 import axios from 'axios';
 import logo from '../logo.png';
+import { Link } from 'react-router-dom';
 
 function Home(props) {
     const [url, setUrl] = useState('');
@@ -62,6 +63,7 @@ function Home(props) {
 			</InputGroup.Append>
 		    </InputGroup>
 		</div>
+		<p style={{position: 'fixed', bottom: 10}}>there's fun  data in the <Link to="/console">console!</Link></p>
 	    </div>
 	);
     } else {
@@ -75,6 +77,7 @@ function Home(props) {
 			    <img className="copyImage" alt="copy url icon" src="https://img.icons8.com/fluent/96/000000/clipboard.png"/>
 		    </Button>
 		</div>
+		<p style={{position: 'fixed', bottom: 10}}>there's fun  data in the <Link to="/console">console!</Link></p>
 	    </div>
 	);
     }
