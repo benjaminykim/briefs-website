@@ -6,18 +6,21 @@ import {
 } from "react-router-dom";
 import Home from './Home';
 import Console from './Console';
-import { Navbar, Nav } from 'react-bootstrap';
+import { Container, Navbar, Nav } from 'react-bootstrap';
 
 export default function App() {
   return (
     <Router>
       <div className="scaffold">
-        <Navbar expand="lg" bg="dark" variant="dark" className="navbar" style={{height:'7vh'}}>
+        <Navbar expand="lg" bg="dark" variant="dark" className="navbar" style={{zIndex:5}} sticky="top">
           <Navbar.Brand href="/">Briefs.Link</Navbar.Brand>
-          <Nav className="mr-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/console">Console</Nav.Link>
-          </Nav>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="mr-auto">
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/console">Console</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
         </Navbar>
 
         <Switch>

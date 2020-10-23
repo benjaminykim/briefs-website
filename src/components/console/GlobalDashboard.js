@@ -2,8 +2,7 @@ import React from 'react';
 import '../../App.css';
 import { processNumber } from '../../Helper';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Table, Row, Col } from 'react-bootstrap';
-import CircleGraphCard from './components/CircleGraphCard.js';
+import { Table } from 'react-bootstrap';
 
 function GlobalDash(props) {
   return(

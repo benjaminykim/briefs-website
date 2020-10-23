@@ -16,7 +16,7 @@ h1 {
 
 .container {
   background-color: var(--background);
-  min-height: 93vh;
+  min-height: 92vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,7 +28,7 @@ h1 {
 
 .console-background {
   background-color: var(--console-background);
-  min-height: 93vh;
+  min-height: 92vh;
 }
 
 .console-panel {
@@ -52,7 +52,7 @@ h1 {
 }
 
 .console-main {
-  min-height: 93vh;
+  min-height: 92vh;
   border-radius: 25px;
   color: white;
   padding: 30px;
